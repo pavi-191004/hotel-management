@@ -1,13 +1,414 @@
+/* =============================
+   🌐 Global Styles
+============================= */
 body {
+  font-family: sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #f9f9f9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* =============================
+   🧭 Navigation
+============================= */
+.nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+.nav a.active {
+  font-weight: bold;
+}
+
+/* =============================
+   📄 Page Layout
+============================= */
+.page {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.page-title {
+  margin-bottom: 1rem;
+}
+
+/* ✅ Center Kitchen Page Wrapper */
+.kitchen-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* =============================
+   🔝 Top Buttons & Filters
+============================= */
+.kitchen-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn.primary {
+  background: #e95420;
+  color: white;
+  border: none;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.filter-bar input,
+.filter-bar select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* =============================
+   🍽️ Menu Cards Grid & Layout
+============================= */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;      /* ✅ Centers the grid nicely */
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-info {
+  padding: 0.75rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.menu-info .desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* ✅ Proper alignment for ₹price and status */
+.price-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.price-status .price {
+  font-weight: 600;
+  color: #000;
+}
+
+.price-status .status {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.price-status .status.active {
+  color: green;
+}
+
+.price-status .status.hidden {
+  color: gray;
+}
+
+/* =============================
+   📊 Table Styles
+============================= */
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 30px;   /* ✅ adds breathing space below cards */
+}
+
+.menu-table th,
+.menu-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.status.active {
+  color: green;
+  font-weight: 500;
+}
+
+.status.hidden {
+  color: gray;
+}
+.orders-page {
+  padding: 20px;
+  background: #faf9f6;
+  min-height: 100vh;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.orders-header h2 {
+  font-size: 24px;
+  color: #222;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn.active {
+  background: #eee1d5;
+}
+
+.btn.new {
+  background: #d2691e;
+  color: white;
+}
+
+.kitchen-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.column {
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.column h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.column h3 span {
+  color: #888;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.order-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #fdfdfd;
+  transition: 0.2s;
+}
+
+.order-card:hover {
+  background: #f8f8f8;
+}
+
+.order-card h4 {
+  margin-bottom: 4px;
+  color: #b55b25;
+}
+
+.order-card p {
+  color: #555;
+  font-size: 14px;
+}
+.menu-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+}
+
+.menu-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-info {
+  margin-top: 10px;
+}
+
+.desc {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.4rem 0;
+}
+
+.price-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #222;
+}
+
+.status.active {
+  color: green;
+}
+
+.status.inactive {
+  color: gray;
+}
+
+.order-btn {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.order-btn:hover {
+  background: #e55a00;
+}
+
+.order-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.place-order-page {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.order-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.quantity-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.quantity-section input {
+  width: 60px;
+  text-align: center;
+}
+
+.total {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.confirm-btn, .cancel-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0.3rem;
+}
+
+.confirm-btn {
+  background: #28a745;
+  color: #fff;
+}
+
+.cancel-btn {
+  background: #ccc;
 }
