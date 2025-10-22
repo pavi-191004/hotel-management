@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-do
 import Dashboard from './pages/Dashboard';
 import Kitchen from './pages/Kitchen';
 import Orders from './pages/Orders';
-import Settings from './pages/Settings';
+import Contact from './pages/Contact';
 import PlaceOrder from './pages/PlaceOrder';
 
 export default function App() {
@@ -13,13 +13,13 @@ export default function App() {
        
         <NavLink to="/">Kitchen</NavLink>
         <NavLink to="/orders">Orders</NavLink>
-        <NavLink to="/settings">Settings</NavLink>
+       <NavLink to="/Contact">Contact</NavLink>
       </nav>
       <Routes>
         
         <Route path="/" element={<Kitchen />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/settings" element={<Settings />} />
+<Route path="/Contact" element={<Contact />} />
         <Route path="/place-order" element={<PlaceOrder />} />
       </Routes>
     </Router>
