@@ -10,8 +10,10 @@ export default function FilterBar({ search, onSearch, category, onCategory }) {
       <select value={category} onChange={e => onCategory(e.target.value)}>
         <option value="All">All Categories</option>
         <option value="chappati">chappati</option>
-        <option value="Pizza">Pizza</option>
-        <option value="Salads">Salads</option>
+        <option value="paani poori">paani poori</option>
+        <option value="idly">idly</option>
+        <option value="meals">meals</option>
+        <option value="parotta">parotta</option>
       </select>
     </div>
   );

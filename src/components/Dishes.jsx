@@ -1,4 +1,4 @@
-// src/components/DishesData.js
+
 const dishes = [
   {
     name: 'chappati',
